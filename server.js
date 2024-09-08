@@ -15,6 +15,10 @@ const PANTRY_API_BASE_URL = `https://getpantry.cloud/apiv1/pantry/${PANTRY_ID}/b
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Generic handler for GET request to fetch data from a specific basket
 app.get('/:basketName', async (req, res) => {
     const { basketName } = req.params;
