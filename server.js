@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/favicon.png', (req, res) => {
+    res.sendFile(path.join(__dirname, 'favicon.png'));
+});
+
 // Generic handler for GET request to fetch data from a specific basket
 app.get('/:basketName', async (req, res) => {
     const { basketName } = req.params;
